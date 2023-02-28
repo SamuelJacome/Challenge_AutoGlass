@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\AutoGlass.Domain\AutoGlass.Domain.csproj" />
+    <ProjectReference Include="..\AutoGlass.Application\AutoGlass.Application.csproj" />
+    <ProjectReference Include="..\AutoGlass.Infrastructure.Data\AutoGlass.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

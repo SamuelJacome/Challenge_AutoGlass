@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AF430F9A-77E2-4FD9-A442-C14FF1A5FB38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGlass.Application", "src\AutoGlass.Application\AutoGlass.Application.csproj", "{FC395608-CD16-4CE3-B2E0-32629C26C656}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGlass.Domain", "src\AutoGlass.Domain\AutoGlass.Domain.csproj", "{9E156D59-63CC-4F48-AA44-E90303592770}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGlass.Infrastructure.Data", "src\AutoGlass.Infrastructure.Data\AutoGlass.Infrastructure.Data.csproj", "{BE4FD257-E75A-4F54-AFE3-5DE004E68E9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGlass.Infrastructure.IoC", "src\AutoGlass.Infrastructure.IoC\AutoGlass.Infrastructure.IoC.csproj", "{C242717C-7E77-4BDF-A763-2AD8300736F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGlass.Tests", "src\AutoGlass.Tests\AutoGlass.Tests.csproj", "{B8D51DAC-024E-48B7-A5ED-F54BEACD4A44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoGlass.WebApi", "src\AutoGlass.WebApi\AutoGlass.WebApi.csproj", "{148EFB09-5B36-4095-A33A-EF38E3EE5988}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC395608-CD16-4CE3-B2E0-32629C26C656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC395608-CD16-4CE3-B2E0-32629C26C656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC395608-CD16-4CE3-B2E0-32629C26C656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC395608-CD16-4CE3-B2E0-32629C26C656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E156D59-63CC-4F48-AA44-E90303592770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E156D59-63CC-4F48-AA44-E90303592770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E156D59-63CC-4F48-AA44-E90303592770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E156D59-63CC-4F48-AA44-E90303592770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4FD257-E75A-4F54-AFE3-5DE004E68E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4FD257-E75A-4F54-AFE3-5DE004E68E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4FD257-E75A-4F54-AFE3-5DE004E68E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4FD257-E75A-4F54-AFE3-5DE004E68E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C242717C-7E77-4BDF-A763-2AD8300736F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C242717C-7E77-4BDF-A763-2AD8300736F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C242717C-7E77-4BDF-A763-2AD8300736F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C242717C-7E77-4BDF-A763-2AD8300736F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D51DAC-024E-48B7-A5ED-F54BEACD4A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D51DAC-024E-48B7-A5ED-F54BEACD4A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D51DAC-024E-48B7-A5ED-F54BEACD4A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D51DAC-024E-48B7-A5ED-F54BEACD4A44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{148EFB09-5B36-4095-A33A-EF38E3EE5988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{148EFB09-5B36-4095-A33A-EF38E3EE5988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{148EFB09-5B36-4095-A33A-EF38E3EE5988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{148EFB09-5B36-4095-A33A-EF38E3EE5988}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC395608-CD16-4CE3-B2E0-32629C26C656} = {AF430F9A-77E2-4FD9-A442-C14FF1A5FB38}
+		{9E156D59-63CC-4F48-AA44-E90303592770} = {AF430F9A-77E2-4FD9-A442-C14FF1A5FB38}
+		{BE4FD257-E75A-4F54-AFE3-5DE004E68E9D} = {AF430F9A-77E2-4FD9-A442-C14FF1A5FB38}
+		{C242717C-7E77-4BDF-A763-2AD8300736F7} = {AF430F9A-77E2-4FD9-A442-C14FF1A5FB38}
+		{B8D51DAC-024E-48B7-A5ED-F54BEACD4A44} = {AF430F9A-77E2-4FD9-A442-C14FF1A5FB38}
+		{148EFB09-5B36-4095-A33A-EF38E3EE5988} = {AF430F9A-77E2-4FD9-A442-C14FF1A5FB38}
+	EndGlobalSection
+EndGlobal
