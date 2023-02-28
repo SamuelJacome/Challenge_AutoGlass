@@ -4,5 +4,7 @@ namespace AutoGlass.Domain.Models
     {
         public int Id { get; protected set; }
         public bool Removed { get; set; } = false;
+
     }
+
 }

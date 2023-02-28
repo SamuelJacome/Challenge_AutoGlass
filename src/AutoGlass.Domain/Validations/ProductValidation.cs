@@ -21,7 +21,8 @@ namespace AutoGlass.Domain.Validations
         {
             RuleFor(_ => _.ProductionDate)
                 .NotNull().WithMessage("Entre com a data de fabricação")
-                .Must(BeAValidDate).WithMessage("Data de fabricação inválida");
+                .Must(BeAValidDate).WithMessage("Data de fabricação inválida")
+                .LessThanOrEqualTo(_ => _.ProductionDate).WithMessage("Data de fabricação não pode ser maior ou igual à data de validade.");
         }
         public void ValidateExpirationDate()
         {

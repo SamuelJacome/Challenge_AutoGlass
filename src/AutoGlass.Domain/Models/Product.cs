@@ -20,7 +20,6 @@ namespace AutoGlass.Domain.Models
                         DateTime productionDate,
                         DateTime expirationDate,
                         int supplierId,
-                        Supplier supplier,
                         bool removed)
         {
             Id = id;
@@ -29,9 +28,11 @@ namespace AutoGlass.Domain.Models
             ProductionDate = productionDate;
             ExpirationDate = expirationDate;
             SupplierId = supplierId;
-            Supplier = supplier;
             Removed = removed;
         }
+        public void SetRemoved(bool removed) =>
+            Removed = removed;
+
         public ValidationResult IsValid() =>
             new ProductValidation().Validate(this);
     }

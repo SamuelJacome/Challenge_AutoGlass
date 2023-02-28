@@ -9,7 +9,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <ProjectReference Include="..\AutoGlass.Domain\AutoGlass.Domain.csproj" />
+    <ProjectReference Include="..\AutoGlass.Application\AutoGlass.Application.csproj" />
+    <ProjectReference Include="..\AutoGlass.Infrastructure.Ioc\AutoGlass.Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\AutoGlass.Infrastructure.Data\AutoGlass.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>
