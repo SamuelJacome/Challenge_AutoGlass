@@ -9,7 +9,7 @@ namespace AutoGlass.Domain.Validations
             ValidateDescription();
             ValidateProductionDate();
             ValidateExpirationDate();
-            // ValidateSupplierValidation();
+            ValidateSupplierValidation();
             ValidateSupplierId();
         }
     }

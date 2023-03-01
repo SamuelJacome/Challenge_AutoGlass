@@ -13,11 +13,15 @@ namespace AutoGlass.Application.Services
     public class ProductAppService : IProductAppService
     {
         private readonly IProductRepository _productRepository;
+        private readonly ISupplierRepository _supplierRepository;
         private readonly IMapper _mapper;
 
-        public ProductAppService(IProductRepository productRepository, IMapper mapper)
+        public ProductAppService(IProductRepository productRepository,
+                                 ISupplierRepository supplierRepository,
+                                 IMapper mapper)
         {
             _productRepository = productRepository;
+            _supplierRepository = supplierRepository;
             _mapper = mapper;
         }
 
@@ -53,7 +57,6 @@ namespace AutoGlass.Application.Services
         public async Task<ValidationResult> Update(ProductViewModel model)
         {
             var product = _mapper.Map<Product>(model);
-
             var validationResult = product.UpdateModelIsValid();
 
             if (validationResult.IsValid)
