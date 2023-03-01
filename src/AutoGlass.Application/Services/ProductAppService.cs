@@ -13,15 +13,12 @@ namespace AutoGlass.Application.Services
     public class ProductAppService : IProductAppService
     {
         private readonly IProductRepository _productRepository;
-        private readonly ISupplierRepository _supplierRepository;
         private readonly IMapper _mapper;
 
         public ProductAppService(IProductRepository productRepository,
-                                 ISupplierRepository supplierRepository,
                                  IMapper mapper)
         {
             _productRepository = productRepository;
-            _supplierRepository = supplierRepository;
             _mapper = mapper;
         }
 
