@@ -34,9 +34,10 @@ namespace AutoGlass.Application.Services
 
         public async Task<ValidationResult> Insert(ProductViewModel model)
         {
+
             var product = _mapper.Map<Product>(model);
 
-            var validationResult = product.IsValid();
+            var validationResult = product.RegisterModelIsValid();
 
             if (validationResult.IsValid)
             {
@@ -53,7 +54,7 @@ namespace AutoGlass.Application.Services
         {
             var product = _mapper.Map<Product>(model);
 
-            var validationResult = product.IsValid();
+            var validationResult = product.UpdateModelIsValid();
 
             if (validationResult.IsValid)
             {

@@ -6,7 +6,7 @@ namespace AutoGlass.Application.ViewModels
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = true;
         public DateTime ProductionDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public int SupplierId { get; set; }

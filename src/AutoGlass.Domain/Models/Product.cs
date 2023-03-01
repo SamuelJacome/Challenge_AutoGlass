@@ -49,7 +49,11 @@ namespace AutoGlass.Domain.Models
         public void SetRemoved(bool removed) =>
             Removed = removed;
 
-        public ValidationResult IsValid() =>
-            new ProductValidation().Validate(this);
+        public ValidationResult RegisterModelIsValid() =>
+            new RegisterProductValidation().Validate(this);
+        public ValidationResult UpdateModelIsValid() =>
+            new UpdateProductValidation().Validate(this);
+        public ValidationResult RemoveModelIsValid() =>
+            new RemoveProductValidation().Validate(this);
     }
 }
