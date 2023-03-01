@@ -14,6 +14,7 @@ namespace AutoGlass.Domain.Validations
         public void ValidateDescription()
         {
             RuleFor(_ => _.Description)
+                .NotNull().WithMessage("Entre com a descrição do produto")
                 .NotEmpty().WithMessage("Entre com a descrição do produto")
                 .MaximumLength(200).WithMessage("Descrição deve ter até 200 caracteres");
         }

@@ -8,6 +8,16 @@ namespace AutoGlass.Application.Mappers
     {
         public ViewModelToModelMapper()
         {
+
+            CreateMap<ProductViewModel, Product>()
+                 .ConstructUsing(_ => new Product(
+                     _.Id,
+                     _.Description,
+                     _.ProductionDate,
+                     _.ExpirationDate,
+                     _.SupplierId
+                 ));
+
             CreateMap<ProductViewModel, Product>()
                     .ConstructUsing(_ => new Product(
                         _.Id,

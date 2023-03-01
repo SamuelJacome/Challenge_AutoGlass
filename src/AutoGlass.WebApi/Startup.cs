@@ -2,17 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoGlass.Domain.Validations;
 using AutoGlass.Infrastructure.IoC;
 using AutoGlass.WebApi.Configuration;
+using AutoGlass.WebApi.Converters;
 using AutoGlass.WebApi.Extensions;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace AutoGlass.WebApi
@@ -28,6 +28,14 @@ namespace AutoGlass.WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddControllers().AddFluentValidation(config =>
+            config.RegisterValidatorsFromAssemblyContaining<ProductValidation>()
+            ).AddJsonOptions(options =>
+            {
+                // options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+                // options.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -46,6 +54,8 @@ namespace AutoGlass.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AutoGlass.WebApi v1"));
             }
+
+
 
             app.UseHttpsRedirection();
 
