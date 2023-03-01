@@ -8,7 +8,7 @@ namespace AutoGlass.Application.Interfaces
 {
     public interface IProductAppService : IDisposable
     {
-        Task<IEnumerable<ProductViewModel>> GetAll();
+        Task<IEnumerable<ProductViewModel>> GetAll(int skip, int take);
         Task<ProductViewModel> GetById(int id);
         Task<ValidationResult> Insert(ProductViewModel model);
         Task<ValidationResult> Update(ProductViewModel model);

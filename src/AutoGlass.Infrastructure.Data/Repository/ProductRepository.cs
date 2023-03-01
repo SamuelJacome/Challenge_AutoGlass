@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using AutoGlass.Domain.Models;
 using System.Collections.Generic;
@@ -17,8 +18,8 @@ namespace AutoGlass.Infrastructure.Data.Repository
             _db = db;
             _dbSet = _db.Set<Product>();
         }
-        public async Task<IEnumerable<Product>> GetAll() =>
-            await _dbSet.ToListAsync();
+        public async Task<IEnumerable<Product>> GetAll(int skip, int take) =>
+            await _dbSet.Skip(skip).Take(take).ToListAsync();
 
         public async Task<Product> GetById(int id) =>
             await _dbSet.FirstAsync(_ => _.Id == id);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoGlass.Infrastructure.IoC;
 using AutoGlass.WebApi.Configuration;
+using AutoGlass.WebApi.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -51,6 +52,7 @@ namespace AutoGlass.WebApi
             app.UseRouting();
 
             app.UseAuthorization();
+            app.ConfigureExceptionHandler();
 
             app.UseEndpoints(endpoints =>
             {

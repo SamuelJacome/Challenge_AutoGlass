@@ -22,9 +22,9 @@ namespace AutoGlass.Application.Services
         }
 
 
-        public async Task<IEnumerable<ProductViewModel>> GetAll() =>
+        public async Task<IEnumerable<ProductViewModel>> GetAll(int skip, int take) =>
             _mapper.Map<IEnumerable<ProductViewModel>>(
-                await _productRepository.GetAll()
+                await _productRepository.GetAll(skip, take)
             );
 
         public async Task<ProductViewModel> GetById(int id) =>

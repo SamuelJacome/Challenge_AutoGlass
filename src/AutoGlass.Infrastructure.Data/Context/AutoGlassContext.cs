@@ -12,13 +12,13 @@ namespace AutoGlass.Infrastructure.Data.Context
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
-
+        public AutoGlassContext(DbContextOptions<AutoGlassContext> options) : base(options)
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            const string strConnection = "Data source=(localdbAutoGlass)\\mssqllocaldb; Initial Catalog=C002;Integrated Security=true;pooling=true;";
             optionsBuilder
-               .UseSqlServer(strConnection)
                .EnableSensitiveDataLogging()
                .LogTo(Console.WriteLine, LogLevel.Information);
         }
@@ -31,6 +31,8 @@ namespace AutoGlass.Infrastructure.Data.Context
 
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(_ => _.GetForeignKeys()))
                 relationship.DeleteBehavior = DeleteBehavior.Cascade;
+
+            modelBuilder.Entity<Product>().HasQueryFilter(_ => !_.Removed);
         }
         public async Task<bool> Commit()
         {
