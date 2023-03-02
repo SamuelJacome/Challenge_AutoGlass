@@ -7,7 +7,7 @@ namespace AutoGlass.Domain.Models
     public class Product : Entity
     {
         public string Description { get; private set; }
-        public bool IsActive { get; private set; }
+        public bool IsActive { get; private set; } = true;
         public DateTime ProductionDate { get; private set; }
         public DateTime ExpirationDate { get; private set; }
         public int SupplierId { get; private set; }
@@ -20,7 +20,6 @@ namespace AutoGlass.Domain.Models
                         DateTime productionDate,
                         DateTime expirationDate,
                         int supplierId,
-                        Supplier supplier,
                         bool removed)
         {
             Id = id;
@@ -29,10 +28,32 @@ namespace AutoGlass.Domain.Models
             ProductionDate = productionDate;
             ExpirationDate = expirationDate;
             SupplierId = supplierId;
-            Supplier = supplier;
             Removed = removed;
         }
-        public ValidationResult IsValid() =>
-            new ProductValidation().Validate(this);
+
+        public Product(int id,
+                       string description,
+                       DateTime productionDate,
+                       DateTime expirationDate,
+                       int supplierId
+                       )
+        {
+            Id = id;
+            Description = description;
+            ProductionDate = productionDate;
+            ExpirationDate = expirationDate;
+            SupplierId = supplierId;
+            IsActive = true;
+        }
+
+        public void SetRemoved(bool removed) =>
+            Removed = removed;
+
+        public ValidationResult RegisterModelIsValid() =>
+            new RegisterProductValidation().Validate(this);
+        public ValidationResult UpdateModelIsValid() =>
+            new UpdateProductValidation().Validate(this);
+        public ValidationResult RemoveModelIsValid() =>
+            new RemoveProductValidation().Validate(this);
     }
 }

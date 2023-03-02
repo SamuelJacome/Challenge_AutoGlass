@@ -6,10 +6,17 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0"/>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AutoGlass.Domain\AutoGlass.Domain.csproj" />
+    <ProjectReference Include="..\AutoGlass.Application\AutoGlass.Application.csproj" />
+    <ProjectReference Include="..\AutoGlass.Infrastructure.Ioc\AutoGlass.Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\AutoGlass.Infrastructure.Data\AutoGlass.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>
